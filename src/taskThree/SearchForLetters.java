@@ -5,22 +5,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SearchForLetters {
-    private static int numberOfVowelLetters(String string) {
-        Pattern vocals = Pattern.compile("(?iu)[аеёиоуыэюяіэ]");
-        Matcher m = vocals.matcher(string);
-        int vocalCounter = 0;
-        while (m.find()) {
-            vocalCounter++;
-        }
-        return vocalCounter;
+
+    public static void enterLineForUser() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("A string: ");
+        String line = in.nextLine();
+        SearchForLetters.sortingWordsByVowels(line);
+        SearchForLetters.WordsByVowels(line);
     }
 
-    public static void sortingWordsByVowels(String string) {
+    private static void sortingWordsByVowels(String line) {
         HashMap<String, Integer> map = new HashMap<>();
         Pattern pattern =
                 Pattern.compile("\\w+", Pattern.UNICODE_CHARACTER_CLASS
                         | Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(string);
+        Matcher matcher = pattern.matcher(line);
         while (matcher.find())
             map.put(matcher.group().toLowerCase(), numberOfVowelLetters(matcher.group()));
 
@@ -29,4 +28,25 @@ public class SearchForLetters {
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .forEach(System.out::println);
     }
+
+    private static int numberOfVowelLetters(String string) {
+        Pattern vocals = Pattern.compile("(?iu)[аеёиоуыэюэeyuioa]");
+        Matcher m = vocals.matcher(string);
+        int vocalCounter = 0;
+        while (m.find()) {
+            vocalCounter++;
+        }
+        return vocalCounter;
+    }
+
+
+    private static void WordsByVowels(String line) {
+        Pattern vocals = Pattern.compile("(?iu)[аеёиоуыэюэeyuioa]");
+        Matcher matcher = vocals.matcher(line);
+        if (matcher.find()) {
+            System.out.println(matcher.replaceFirst(matcher.group().toUpperCase()));
+        }
+    }
+
+
 }
