@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Knapsack {
 
-    public static void solutionKnapsack(Vault vault, List<Item> items) {
+    public  void solutionKnapsack(Vault vault, List<Item> items) {
 
         int count = items.size();
         int maxWeight = vault.getVolume();
@@ -42,7 +42,7 @@ public class Knapsack {
         }
     }
 
-    private static void traceResult(int[][] A, List<Item> items, int k, int s, ArrayList<Item> result) {
+    private  void traceResult(int[][] A, List<Item> items, int k, int s, ArrayList<Item> result) {
         if (A[k][s] == 0) {
             return;
         }

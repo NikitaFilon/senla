@@ -1,11 +1,10 @@
 package taskFive.bean;
 
-import taskFive.bean.Item;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ItemList {
+
     public static List<Item> createItemDatabase() {
         List<Item> items = new ArrayList<>();
         items.add(new Item("apple",2, 100));
@@ -15,4 +14,5 @@ public class ItemList {
         items.add(new Item("dollar", 1, 20));
         return items;
     }
+
 }

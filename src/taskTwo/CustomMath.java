@@ -4,14 +4,12 @@ import java.util.Scanner;
 
 public class CustomMath {
 
-
-    public static void printResultPrimeNumbers(){
-
+    public  void printResultPrimeNumbers(){
         double number = checkInputLineUser();
-        CustomMath.searchPrimeNumbers(number);
+        searchPrimeNumbers(number);
     }
 
-    private static double checkInputLineUser(){
+    private  double checkInputLineUser(){
         double number;
         System.out.println("Enter the prime number: ");
         Scanner scanner = new Scanner(System.in);
@@ -23,7 +21,7 @@ public class CustomMath {
         return number;
     }
 
-    private static void searchPrimeNumbers(double number){
+    private  void searchPrimeNumbers(double number){
         int twoInt = 2;
         while (number !=1) {
             if (number % twoInt == 0){
@@ -36,4 +34,5 @@ public class CustomMath {
             }
         }
     }
+
 }

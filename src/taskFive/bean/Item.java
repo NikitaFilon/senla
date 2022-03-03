@@ -1,9 +1,22 @@
 package taskFive.bean;
 
 public class Item {
-    private final String name;
-    private final int volume;
-    private final int price;
+
+    private  String name;
+    private  int volume;
+    private  int price;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -29,6 +42,5 @@ public class Item {
         this.volume = volume;
         this.price = price;
     }
-
 
 }

@@ -1,6 +1,7 @@
 package taskFive.bean;
 
 public class Vault {
+
     private int volume;
 
     public int getVolume() {
@@ -14,4 +15,5 @@ public class Vault {
     public Vault(int volume) {
         this.volume = volume;
     }
+
 }

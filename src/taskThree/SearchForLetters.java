@@ -6,15 +6,15 @@ import java.util.regex.Pattern;
 
 public class SearchForLetters {
 
-    public static void enterLineForUser() {
+    public  void enterLineForUser() {
         Scanner in = new Scanner(System.in);
         System.out.print("A string: ");
         String line = in.nextLine();
-        SearchForLetters.sortingWordsByVowels(line);
-        SearchForLetters.WordsByVowels(line);
+        sortingWordsByVowels(line);
+        wordsByVowels(line);
     }
 
-    private static void sortingWordsByVowels(String line) {
+    private  void sortingWordsByVowels(String line) {
         HashMap<String, Integer> map = new HashMap<>();
         Pattern pattern =
                 Pattern.compile("\\w+", Pattern.UNICODE_CHARACTER_CLASS
@@ -29,7 +29,7 @@ public class SearchForLetters {
                 .forEach(System.out::println);
     }
 
-    private static int numberOfVowelLetters(String string) {
+    private  int numberOfVowelLetters(String string) {
         Pattern vocals = Pattern.compile("(?iu)[аеёиоуыэюэeyuioa]");
         Matcher m = vocals.matcher(string);
         int vocalCounter = 0;
@@ -40,13 +40,12 @@ public class SearchForLetters {
     }
 
 
-    private static void WordsByVowels(String line) {
+    private  void wordsByVowels(String line) {
         Pattern vocals = Pattern.compile("(?iu)[аеёиоуыэюэeyuioa]");
         Matcher matcher = vocals.matcher(line);
         if (matcher.find()) {
             System.out.println(matcher.replaceFirst(matcher.group().toUpperCase()));
         }
     }
-
 
 }
