@@ -2,10 +2,9 @@ package taskFour;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 
-public class CustonPrintNumber {
+public class CustomPrintNumber {
     private final int width = 100;
     private final int height = 30;
 

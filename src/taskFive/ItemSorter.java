@@ -6,9 +6,9 @@ import taskFive.bean.Vault;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Knapsack {
+public class ItemSorter {
 
-    public  void solutionKnapsack(Vault vault, List<Item> items) {
+    public  ArrayList<Item> solutionKnapsack(Vault vault, List<Item> items) {
 
         int count = items.size();
         int maxWeight = vault.getVolume();
@@ -36,10 +36,7 @@ public class Knapsack {
         ArrayList<Item> result = new ArrayList<>();
         traceResult(A, items, count, maxWeight, result);
 
-        System.out.println("The optimal solution:");
-        for (Item item : result) {
-            System.out.println(item);
-        }
+        return result;
     }
 
     private  void traceResult(int[][] A, List<Item> items, int k, int s, ArrayList<Item> result) {
