@@ -19,9 +19,9 @@ public class LineHandler {
     }
 
     public List<Map.Entry<String, Integer>> sortByVowelsNumbers(HashMap<String, Integer> map){
-        var l = map.entrySet().stream()
+        var hashMapResult = map.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).toList();
-        return  l;
+        return  hashMapResult;
     }
 
     private  int numberOfVowelLetters(String string) {

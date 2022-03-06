@@ -2,9 +2,9 @@ package taskFive.bean;
 
 public class Item {
 
-    private  String name;
-    private  int volume;
-    private  int price;
+    private String name;
+    private int volume;
+    private int price;
 
     public void setName(String name) {
         this.name = name;
